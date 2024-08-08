@@ -35,14 +35,14 @@ public class MessageSenderImplTests {
     @Test
     public void testSendWithRussianIp() { // с использованием класса Mock
         // Arrange
-       String ipAddress = "172.0.32.11";
-       Map<String, String> headers = new HashMap<>();
-       headers.put(MessageSenderImpl.IP_ADDRESS_HEADER, ipAddress);
-       Location location = new Location("Moscow", Country.RUSSIA, "Lenina", 15);
-       GeoServiceMock geoServiceMock = new GeoServiceMock(location);
+        String ipAddress = "172.0.32.11";
+        Map<String, String> headers = new HashMap<>();
+        headers.put(MessageSenderImpl.IP_ADDRESS_HEADER, ipAddress);
+        Location location = new Location("Moscow", Country.RUSSIA, "Lenina", 15);
+        GeoServiceMock geoServiceMock = new GeoServiceMock(location);
 
         LocalizationServiceMock localizationServiceMock = new LocalizationServiceMock(Country.RUSSIA);
-        MessageSenderImpl messageSenderImpl = new MessageSenderImpl(geoServiceMock,localizationServiceMock);
+        MessageSenderImpl messageSenderImpl = new MessageSenderImpl(geoServiceMock, localizationServiceMock);
 
         // Act
         String result = messageSenderImpl.send(headers);
@@ -69,6 +69,7 @@ public class MessageSenderImplTests {
         // Assert
         assertEquals("US", result);
     }
+
     @Test
     public void testSendWithoutIp() {
         // Arrange
