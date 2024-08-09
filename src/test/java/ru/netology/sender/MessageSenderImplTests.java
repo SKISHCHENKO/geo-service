@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import ru.netology.entity.Country;
 import ru.netology.entity.Location;
@@ -74,8 +73,6 @@ public class MessageSenderImplTests {
     public void testSendWithoutIp() {
         // Arrange
         Map<String, String> headers = new HashMap<>();
-
-        when(localizationService.locale(Country.USA)).thenReturn("US");
 
         // Act
         // Assert
