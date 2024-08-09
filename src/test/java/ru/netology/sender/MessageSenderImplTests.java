@@ -54,7 +54,7 @@ public class MessageSenderImplTests {
     @Test
     public void testSendWithAmericanIp() { // использование аннотации Mock
         // Arrange
-        String ipAddress = "96.44.183.149";
+        String ipAddress = "96.44.183.149"; //TEST
         Map<String, String> headers = new HashMap<>();
         headers.put(MessageSenderImpl.IP_ADDRESS_HEADER, ipAddress);
 
